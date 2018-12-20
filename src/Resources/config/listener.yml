@@ -1,0 +1,12 @@
+services:
+    srhinow_bzbbk.listener.insert_tags:
+        class: Srhinow\BzBbkBundle\EventListener\InsertTagsListener
+        arguments:
+            - "@contao.framework"
+        public: true
+    srhinow_bzbbk.listener.new_user:
+        class: Srhinow\BzBbkBundle\EventListener\NewUserListener
+        arguments:
+            - "@contao.framework"
+            - "@database_connection"
+        public: true

@@ -1,0 +1,6 @@
+@import '/system/modules/newsletter/assets/style.css';
+
+.check_new_newsletter{
+  background:url("./refresh.png") no-repeat left center;
+  padding-left: 18px;
+}
