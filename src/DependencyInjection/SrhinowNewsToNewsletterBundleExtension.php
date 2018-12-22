@@ -1,14 +1,14 @@
 <?php
 
 /*
- * This file is part of bz-bbk-bundle.
+ * This file is part of news-to-newsletter-bundle.
  *
  * Copyright (c) 2004-2018 Sven Rhinow
  *
  * @license LGPL-3.0+
  */
 
-namespace Srhinow\BzBbkBundle\DependencyInjection;
+namespace Srhinow\NewsToNewsletterBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -20,7 +20,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
  *
  * @author Sven Rhinow <https://gitlab.com/srhinow>
  */
-class SrhinowBzBbkBundleExtension extends Extension
+class SrhinowNewsToNewsletterBundleExtension extends Extension
 {
     /**
      * {@inheritdoc}
@@ -35,6 +35,6 @@ class SrhinowBzBbkBundleExtension extends Extension
         $loader->load('listener.yml');
 
         //Setzen von globalen Variablen
-        $container->setParameter('bn.testvalue','lorem ipsum...');
+//        $container->setParameter('bn.testvalue','lorem ipsum...');
     }
 }
