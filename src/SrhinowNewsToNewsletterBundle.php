@@ -3,14 +3,14 @@
 /**
  * @copyright  Sven Rhinow <https://www.sr-tag.de>
  * @author     Sven Rhinow
- * @package    BzBbkBundle
+ * @package    NewsToNewsletterBundle
  *
  */
 
-namespace Srhinow\BzBbkBundle;
+namespace Srhinow\NewsToNewsletterBundle;
 
 
-use Srhinow\BzBbkBundle\DependencyInjection\SrhinowBzBbkBundleExtension;
+use Srhinow\NewsToNewsletterBundle\DependencyInjection\SrhinowNewsToNewsletterBundleExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -19,7 +19,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  *
  * @author Sven Rhinow
  */
-class SrhinowBzBbkBundle extends Bundle
+class SrhinowNewsToNewsletterBundle extends Bundle
 {
     /**
      * Builds the bundle.
@@ -40,6 +40,6 @@ class SrhinowBzBbkBundle extends Bundle
      */
     public function getContainerExtension()
     {
-        return new SrhinowBzBbkBundleExtension();
+        return new SrhinowNewsToNewsletterBundleExtension();
     }
 }
