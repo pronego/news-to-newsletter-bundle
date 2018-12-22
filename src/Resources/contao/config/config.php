@@ -2,15 +2,16 @@
 
 /**
  * PHP version 5
- * @copyright  Sven Rhinow 2004-2016
+ * @copyright  Sven Rhinow 2018
  * @author     Sven Rhinow <http://www.sr-tag.de>
- * @package    newsletterFromNews
+ * @package    news-to-newsletter-bundle
  * @license    LGPL
  * @filesource
  */
- 
-$GLOBALS['BE_MOD']['content']['newsletter']['stylesheet'] = 'system/modules/newsletterFromNews/assets/be.css'; 
-$GLOBALS['BE_MOD']['content']['newsletter']['checkNewNewsletter'] = array('newsletterFromNews', 'checkNewNewsletter');
+$GLOBALS['N2NL']['PROPERTIES']['PUBLICSRC'] = 'bundles/srhinownewstonewsletter';
+
+$GLOBALS['BE_MOD']['content']['newsletter']['stylesheet'] = $GLOBALS['N2NL']['PROPERTIES']['PUBLICSRC'].'/be.css';
+$GLOBALS['BE_MOD']['content']['newsletter']['checkNewNewsletter'] = array('Srhinow\NewsToNewsletterBundle\NewsToNewsletter', 'checkNewNewsletter');
 
 /**
  * Cron jobs

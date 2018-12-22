@@ -1,7 +1,7 @@
 {
-  "name": "srhinow/bz-bbk-bundle",
-  "description": "a tool to administration the 'bilderbuchkinos' (bbk) at bz-niedersachsen.de",
-  "keywords": ["contao", "bbk","bilderbuchkinos"],
+  "name": "srhinow/news-to-newsletter-bundle",
+  "description": "a tool to generate a Newsletter from all flagged News",
+  "keywords": ["contao", "news","nesletter"],
   "type": "contao-module",
   "license": "GPL-3.0+",
   "authors":[
@@ -13,18 +13,18 @@
   ],
   "support":{
     "email": "kservice@sr-tag.de",
-    "source":"git@gitlab.com:srhinow/bz-bbk-bundle.git"
+    "source":"git@gitlab.com:srhinow/news-to-newsletter-bundle.git"
   },
   "require": {
     "php": ">=7.2",
     "contao/core-bundle": "~3.5 || ~4.4",
     "contao-community-alliance/composer-plugin":"~2.4 || ~3.0",
-    "dompdf/dompdf": "^0.8.0",
-    "hschottm/tags": "^4.0"
+    "contao/news-bundle": "^4.4",
+    "contao/newsletter-bundle": "^4.4"
   },
   "autoload": {
     "psr-4": {
-      "Srhinow\\BzBbkBundle\\": "src/"
+      "Srhinow\\NewsToNewsletterBundle\\": "src/"
     },
     "classmap": [
       "src/Resources/contao/"
@@ -36,6 +36,6 @@
     ]
   },
   "extra": {
-    "contao-manager-plugin": "Srhinow\\BzBbkBundle\\ContaoManager\\Plugin"
+    "contao-manager-plugin": "Srhinow\\NewsToNewsletterBundle\\ContaoManager\\Plugin"
   }
 }
