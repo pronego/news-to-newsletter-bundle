@@ -16,6 +16,8 @@ use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 
+use Contao\NewsBundle\ContaoNewsBundle;
+use Contao\NewsletterBundle\ContaoNewsletterBundle;
 use Srhinow\NewsToNewsletterBundle\SrhinowNewsToNewsletterBundle;
 
 /**
@@ -33,6 +35,8 @@ class Plugin implements BundlePluginInterface
         return [
             BundleConfig::create(SrhinowNewsToNewsletterBundle::class)
                 ->setLoadAfter([ContaoCoreBundle::class])
+                ->setLoadAfter([ContaoNewsletterBundle::class])
+                ->setLoadAfter([ContaoNewsBundle::class])
         ];
     }
 }
