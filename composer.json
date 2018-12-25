@@ -13,7 +13,7 @@
   ],
   "support":{
     "email": "kservice@sr-tag.de",
-    "source":"git@gitlab.com:srhinow/news-to-newsletter-bundle.git"
+    "source":"https://gitlab.com/srhinow/news-to-newsletter-bundle"
   },
   "require": {
     "php": ">=7.2",
