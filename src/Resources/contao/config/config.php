@@ -5,7 +5,7 @@
  * @copyright  Sven Rhinow 2018
  * @author     Sven Rhinow <http://www.sr-tag.de>
  * @package    news-to-newsletter-bundle
- * @license    LGPL
+ * @license    LGPL-3.0+
  * @filesource
  */
 $GLOBALS['N2NL']['PROPERTIES']['PUBLICSRC'] = 'bundles/srhinownewstonewsletter';

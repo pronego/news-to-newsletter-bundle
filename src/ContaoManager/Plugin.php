@@ -4,7 +4,7 @@
  * @copyright  Sven Rhinow 2018 <https://www.sr-tag.de>
  * @author     Sven Rhinow
  * @package    NewsToNewsletterBundle
- * @license    LGPL
+ * @license    LGPL-3.0+
  * @see	       https://gitlab.com/srhinow/bz-bbk-bundle
  *
  */

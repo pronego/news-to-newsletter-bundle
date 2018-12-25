@@ -3,7 +3,7 @@
   "description": "a tool to generate a Newsletter from all flagged News",
   "keywords": ["contao", "news","nesletter"],
   "type": "contao-module",
-  "license": "GPL-3.0+",
+  "license": "LGPL-3.0+",
   "authors":[
     {
       "name":"Sven Rhinow",

@@ -4,7 +4,7 @@
  * @copyright  Sven Rhinow Webentwicklung 2018 <http://www.sr-tag.de>
  * @author     Sven Rhinow
  * @package    news-to-newsletter-bundle
- * @license    LGPL
+ * @license    LGPL-3.0+
  * @filesource
  */
 

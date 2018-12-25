@@ -4,6 +4,7 @@
  * @copyright  Sven Rhinow <https://www.sr-tag.de>
  * @author     Sven Rhinow
  * @package    NewsToNewsletterBundle
+ * @license    LGPL-3.0+
  *
  */
 
