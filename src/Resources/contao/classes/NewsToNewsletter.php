@@ -39,6 +39,8 @@ class NewsToNewsletter extends Backend
             $this->redirect(str_replace('&key=checkNewNewsletter', '', $this->Environment->request));
         }
 
+		$objChannel = \NewsletterChannelModel::findByIds(array($nlChannel))[0];
+
 	    $content = array();
 
 		if ($dbObj->numRows > 0)
@@ -68,10 +70,18 @@ class NewsToNewsletter extends Backend
 			    $this->Database->prepare("UPDATE `tl_news` SET `ntonl`= 0 WHERE `id`=? ")->execute($dbObj->id);
 		    }
 
+		    //Find the template or use the default
+
+			if(!$objChannel->n2nl_template){
+				$template = "n2nl-mail";
+			}else{
+				$template = $objChannel->n2nl_template;
+			}
+
 		    //Generate the HTML Newsletter Content from the Template
-			$template             = new \BackendTemplate("news2newsletter-mail");
+			$template             = new \BackendTemplate($template);
 			$template->wildcard   = "### MailTemplate ###";
-			$template->content = $content;
+			$template->content	  = $content;
 			$this->NewsletterContent = $template->parse();
 
 		    //Create new Newsletter with all relevant News

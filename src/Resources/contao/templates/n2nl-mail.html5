@@ -1,0 +1,8 @@
+
+<body>
+    <?php $this->insert('n2nl-tableofcontents', $this->getData()); ?>
+
+    <?php foreach($this->content as $article):?>
+        <?php $this->insert('n2nl-article', $article); ?>
+    <?php endforeach; ?>
+</body>

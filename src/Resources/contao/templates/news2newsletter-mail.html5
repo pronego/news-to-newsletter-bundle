@@ -1,8 +1,0 @@
-
-<body>
-    <?php $this->insert('news2newsletter-tableofcontents', $this->getData()); ?>
-
-    <?php foreach($this->content as $article):?>
-        <?php $this->insert('news2newsletter-article', $article); ?>
-    <?php endforeach; ?>
-</body>
