@@ -15,43 +15,49 @@
 $GLOBALS['TL_DCA']['tl_newsletter_recipients']['palettes']['default'] = str_replace
 (
 	'active',
-	'active,salutation',
+	'active,recipients_lastname',
 	$GLOBALS['TL_DCA']['tl_newsletter_recipients']['palettes']['default']
 );
 $GLOBALS['TL_DCA']['tl_newsletter_recipients']['palettes']['default'] = str_replace
 (
 	'active',
-	'active,surname',
+	'active,recipients_firstname',
 	$GLOBALS['TL_DCA']['tl_newsletter_recipients']['palettes']['default']
 );
 $GLOBALS['TL_DCA']['tl_newsletter_recipients']['palettes']['default'] = str_replace
 (
 	'active',
-	'active,firstname',
+	'active,recipients_gender',
 	$GLOBALS['TL_DCA']['tl_newsletter_recipients']['palettes']['default']
 );
 
 
 /**
  * Add field to tl_newsletter_recipients
+ * ['value1' => 'label1', 'value2' => 'label2']
  */
-$GLOBALS['TL_DCA']['tl_newsletter_recipients']['fields']['salutation'] = array
+$GLOBALS['TL_DCA']['tl_newsletter_recipients']['fields']['recipients_gender'] = array
 (
-	'label'     => &$GLOBALS['TL_LANG']['tl_newsletter_recipients']['salutation'],
+	'label'     => &$GLOBALS['TL_LANG']['tl_newsletter_recipients']['gender'],
 	'exclude'   => true,
-	'inputType' => 'text',
+	'inputType' => 'select',
+	'options'	=> array(
+		'male' => $GLOBALS['TL_LANG']['tl_newsletter_recipients']['gender_options']['male'],
+		'female' => $GLOBALS['TL_LANG']['tl_newsletter_recipients']['gender_options']['female'],
+		'other' => $GLOBALS['TL_LANG']['tl_newsletter_recipients']['gender_options']['other'],
+	),
 	'eval'      => array('mandatory'=>true, 'rgxp'=>'alpha', 'maxlength'=>8, 'tl_class'=>'w50'),
 	'sql'		=> "varchar(8) NOT NULL default ''"
 );
-$GLOBALS['TL_DCA']['tl_newsletter_recipients']['fields']['surname'] = array
+$GLOBALS['TL_DCA']['tl_newsletter_recipients']['fields']['recipients_lastname'] = array
 (
-	'label'     => &$GLOBALS['TL_LANG']['tl_newsletter_recipients']['surname'],
+	'label'     => &$GLOBALS['TL_LANG']['tl_newsletter_recipients']['lastname'],
 	'exclude'   => true,
 	'inputType' => 'text',
 	'eval'      => array('mandatory'=>true, 'rgxp'=>'alpha', 'maxlength'=>50, 'tl_class'=>'w50'),
 	'sql'		=> "varchar(50) NOT NULL default ''"
 );
-$GLOBALS['TL_DCA']['tl_newsletter_recipients']['fields']['firstname'] = array
+$GLOBALS['TL_DCA']['tl_newsletter_recipients']['fields']['recipients_firstname'] = array
 (
 	'label'     => &$GLOBALS['TL_LANG']['tl_newsletter_recipients']['firstname'],
 	'exclude'   => true,
