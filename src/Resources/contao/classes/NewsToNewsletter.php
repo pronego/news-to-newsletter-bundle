@@ -3,12 +3,14 @@
 /**
  * PHP version 7
  * @copyright  Sven Rhinow Webentwicklung 2018 <http://www.sr-tag.de>
+ * @copyright  Jonas Linn 2020
  * @author     Sven Rhinow
+ * @author     Jonas Linn
  * @package    news-to-newsletter-bundle
  * @license    LGPL-3.0+
  * @filesource
  */
-namespace Srhinow\NewsToNewsletterBundle;
+namespace Jl\NewsToNewsletterBundle;
 
 use Contao\Backend;
 use Contao\ContentModel;

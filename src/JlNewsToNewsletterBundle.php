@@ -3,15 +3,16 @@
 /**
  * @copyright  Sven Rhinow <https://www.sr-tag.de>
  * @author     Sven Rhinow
+ * @author     Jonas Linn
  * @package    NewsToNewsletterBundle
  * @license    LGPL-3.0+
  *
  */
 
-namespace Srhinow\NewsToNewsletterBundle;
+namespace Jl\NewsToNewsletterBundle;
 
 
-use Srhinow\NewsToNewsletterBundle\DependencyInjection\SrhinowNewsToNewsletterBundleExtension;
+use Jl\NewsToNewsletterBundle\DependencyInjection\JlNewsToNewsletterBundleExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -19,8 +20,9 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  * Configures the Contao contao-blank-bundle.
  *
  * @author Sven Rhinow
+ * @author Jonas Linn
  */
-class SrhinowNewsToNewsletterBundle extends Bundle
+class JlNewsToNewsletterBundle extends Bundle
 {
     /**
      * Builds the bundle.
@@ -41,6 +43,6 @@ class SrhinowNewsToNewsletterBundle extends Bundle
      */
     public function getContainerExtension()
     {
-        return new SrhinowNewsToNewsletterBundleExtension();
+        return new JlNewsToNewsletterBundleExtension();
     }
 }

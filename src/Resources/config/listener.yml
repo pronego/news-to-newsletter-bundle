@@ -1,11 +1,11 @@
 services:
-    srhinow_n2nl.listener.insert_tags:
-        class: Srhinow\NewsToNewsletterBundle\EventListener\InsertTagsListener
+    jl_n2nl.listener.insert_tags:
+        class: Jl\NewsToNewsletterBundle\EventListener\InsertTagsListener
         arguments:
             - "@contao.framework"
         public: true
-    srhinow_n2nl.listener.new_user:
-        class: Srhinow\NewsToNewsletterBundle\EventListener\NewUserListener
+    jl_n2nl.listener.new_user:
+        class: Jl\NewsToNewsletterBundle\EventListener\NewUserListener
         arguments:
             - "@contao.framework"
             - "@database_connection"
