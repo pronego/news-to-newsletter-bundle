@@ -15,6 +15,10 @@ $GLOBALS['N2NL']['PROPERTIES']['PUBLICSRC'] = 'bundles/jlnewstonewsletter';
 $GLOBALS['BE_MOD']['content']['newsletter']['stylesheet'] = $GLOBALS['N2NL']['PROPERTIES']['PUBLICSRC'].'/be.css';
 $GLOBALS['BE_MOD']['content']['newsletter']['checkNewNewsletter'] = array('Jl\NewsToNewsletterBundle\NewsToNewsletter', 'checkNewNewsletter');
 
+
+// Das Verhalten des Standard Newsletters überschreiben
+$GLOBALS['BE_MOD']['content']['newsletter']['send'] = array('Jl\NewsToNewsletterBundle\Newsletter', 'send');
+
 /**
  * Cron jobs
  */ 
