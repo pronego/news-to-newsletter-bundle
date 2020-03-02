@@ -89,12 +89,12 @@ class NewsToNewsletter extends Backend
 		    (
 				'pid' => $GLOBALS['TL_CONFIG']['ntonl_nl_channel'],
 				'tstamp' => time(),
-				'subject' => htmlentities(sprintf($GLOBALS['TL_CONFIG']['ntonl_submitText'],date('m-Y'))),
+				'subject' => htmlentities(sprintf($objChannel->title,date('m-Y'))),
 				'alias' => 'nl-'.date('dmY-His'),
 				'content' => $this->NewsletterContent,
 				'text' => $this->NewsletterText,
-				'sender' => $GLOBALS['TL_CONFIG']['ntonl_sender'],
-				'senderName' => $GLOBALS['TL_CONFIG']['ntonl_senderName']
+				'sender' => $objChannel->sender,
+				'senderName' => $objChannel->senderName
 		    );
 
 		    $this->Database->prepare("INSERT INTO `tl_newsletter` %s ")
