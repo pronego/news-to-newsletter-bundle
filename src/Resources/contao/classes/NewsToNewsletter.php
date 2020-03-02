@@ -38,7 +38,9 @@ class NewsToNewsletter extends Backend
 
             $this->redirect(str_replace('&key=checkNewNewsletter', '', $this->Environment->request));
         }
-        
+
+	    $content = array();
+
 		if ($dbObj->numRows > 0)
 		{
 		    while ($dbObj->next())
@@ -58,12 +60,19 @@ class NewsToNewsletter extends Backend
 		    	}
 
 		    	//baut den Inhalt zusammen
-			    $this->NewsletterContent .= '<h3>'.$dbObj->headline.'</h3>'.$text;
+			    //$this->NewsletterContent .= '<h3>'.$dbObj->headline.'</h3>'.$text;
+		    	$content[] = array('headline' => $dbObj->headline, "text" => $text);
 			    $this->NewsletterText .= "\n------------------------------------\n".$dbObj->headline."\n------------------------------------\n".strip_tags($text);
 
 			    //UPDATE all exported News
 			    $this->Database->prepare("UPDATE `tl_news` SET `ntonl`= 0 WHERE `id`=? ")->execute($dbObj->id);
 		    }
+
+		    //Generate the HTML Newsletter Content from the Template
+			$template             = new \BackendTemplate("news2newsletter-mail");
+			$template->wildcard   = "### MailTemplate ###";
+			$template->content = $content;
+			$this->NewsletterContent = $template->parse();
 
 		    //Create new Newsletter with all relevant News
 		    $set = array

@@ -1,0 +1,8 @@
+<h3>Inhaltsverzeichnis</h3>
+<ul>
+    <?php $i = 1;?>
+    <?php foreach($this->content as $article):?>
+        <li><?= $i.' '.$article['headline']; ?></li>
+        <?php $i++; ?>
+    <?php endforeach; ?>
+</ul>
