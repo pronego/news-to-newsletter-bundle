@@ -19,10 +19,7 @@ $GLOBALS['BE_MOD']['content']['newsletter']['checkNewNewsletter'] = array('Jl\Ne
 // Das Verhalten des Standard Newsletters und des Newsletter abonnieren Moduls überschreiben
 $GLOBALS['BE_MOD']['content']['newsletter']['send'] = array('Jl\NewsToNewsletterBundle\Newsletter', 'send');
 // Front end modules
-$GLOBALS['FE_MOD']['newsletter'] = array
-(
-	'subscribe'        => 'Jl\NewsToNewsletterBundle\ModuleSubscribe',
-);
+$GLOBALS['FE_MOD']['newsletter']['subscribe'] = 'Jl\NewsToNewsletterBundle\ModuleSubscribe';
 
 /**
  * Cron jobs

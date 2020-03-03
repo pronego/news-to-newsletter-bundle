@@ -18,16 +18,6 @@
       <?php endif; ?>
 
       <div class="widget widget-text mandatory">
-        <label for="ctrl_firstname_<?= $this->id ?>" class="invisible"><?= $this->firstnameLabel ?></label>
-        <input type="text" name="firstname" id="ctrl_firstname_<?= $this->id ?>" class="text mandatory" value="<?= ''//$this->email?? ?>" placeholder="<?= $this->firstnameLabel ?>" required>
-      </div>
-
-      <div class="widget widget-text mandatory">
-        <label for="ctrl_lastname_<?= $this->id ?>" class="invisible"><?= $this->lastnameLabel ?></label>
-        <input type="text" name="lastname" id="ctrl_lastname_<?= $this->id ?>" class="text mandatory" value="<?= ''//$this->email?? ?>" placeholder="<?= $this->lastnameLabel ?>" required>
-      </div>
-
-      <div class="widget widget-text mandatory">
         <label for="ctrl_gender_<?= $this->id ?>" class="invisible"><?= $this->genderLabel ?></label>
         <select type="text" name="gender" id="ctrl_gender_<?= $this->id ?>" class="text mandatory" required>
           <option value="label" selected disabled><?= $this->genderLabel ?></option>
@@ -35,6 +25,16 @@
           <option value="female"><?= $this->genderOptions['female'] ?></option>
           <option value="other"><?= $this->genderOptions['other'] ?></option>
         </select>
+      </div>
+
+      <div class="widget widget-text mandatory">
+        <label for="ctrl_firstname_<?= $this->id ?>" class="invisible"><?= $this->firstnameLabel ?></label>
+        <input type="text" name="firstname" id="ctrl_firstname_<?= $this->id ?>" class="text mandatory" value="<?= ''//$this->email?? ?>" placeholder="<?= $this->firstnameLabel ?>" required>
+      </div>
+
+      <div class="widget widget-text mandatory">
+        <label for="ctrl_lastname_<?= $this->id ?>" class="invisible"><?= $this->lastnameLabel ?></label>
+        <input type="text" name="lastname" id="ctrl_lastname_<?= $this->id ?>" class="text mandatory" value="<?= ''//$this->email?? ?>" placeholder="<?= $this->lastnameLabel ?>" required>
       </div>
 
       <div class="widget widget-text mandatory">

@@ -12,7 +12,7 @@ namespace Jl\NewsToNewsletterBundle;
  */
 class ModuleSubscribe extends \Contao\ModuleSubscribe
 {
-	protected  $strTemplate = 'nl_default';
+	protected  $strTemplate = 'nl_default_subscribe';
 
 	/**
 	 * Generate the module
