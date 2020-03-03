@@ -16,8 +16,13 @@ $GLOBALS['BE_MOD']['content']['newsletter']['stylesheet'] = $GLOBALS['N2NL']['PR
 $GLOBALS['BE_MOD']['content']['newsletter']['checkNewNewsletter'] = array('Jl\NewsToNewsletterBundle\NewsToNewsletter', 'checkNewNewsletter');
 
 
-// Das Verhalten des Standard Newsletters überschreiben
+// Das Verhalten des Standard Newsletters und des Newsletter abonnieren Moduls überschreiben
 $GLOBALS['BE_MOD']['content']['newsletter']['send'] = array('Jl\NewsToNewsletterBundle\Newsletter', 'send');
+// Front end modules
+$GLOBALS['FE_MOD']['newsletter'] = array
+(
+	'subscribe'        => 'Jl\NewsToNewsletterBundle\ModuleSubscribe',
+);
 
 /**
  * Cron jobs
