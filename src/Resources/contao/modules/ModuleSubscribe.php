@@ -31,6 +31,10 @@ class ModuleSubscribe extends \Contao\ModuleSubscribe
 	{
 		$validated = parent::validateForm($objWidget);
 
+		if($validated === false){
+			return false;
+		}
+
 		$lastname = \Input::post('lastname');
 
 		if(!\Validator::isAlphabetic($lastname)){
