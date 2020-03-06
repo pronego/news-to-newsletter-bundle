@@ -1,0 +1,18 @@
+<?php //In diesem Template dürfen keine html tags benutzt werden!?>
+
+Inhaltsverzeichnis
+<?php $index=1;?>
+<?php foreach($this->content as $article):?>
+<?= $index.'. '. $article['headline']?>
+
+<?php $index++; ?>
+<?php endforeach; ?>
+
+
+<?php $index=1;?>
+<?php foreach($this->content as $article):?>
+<?= $index.'. '. $article['headline'].'
+'.$article['text']?>
+
+<?php $index++; ?>
+<?php endforeach; ?>

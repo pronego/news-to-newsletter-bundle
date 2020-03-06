@@ -42,6 +42,7 @@ class NewsToNewsletter extends Backend
 		$objChannel = \NewsletterChannelModel::findByIds(array($nlChannel))[0];
 
 	    $content = array();
+		$content_textonly = array();
 
 		if ($dbObj->numRows > 0)
 		{
@@ -62,9 +63,8 @@ class NewsToNewsletter extends Backend
 		    	}
 
 		    	//baut den Inhalt zusammen
-			    //$this->NewsletterContent .= '<h3>'.$dbObj->headline.'</h3>'.$text;
 		    	$content[] = array('headline' => $dbObj->headline, "text" => $text);
-			    $this->NewsletterText .= "\n------------------------------------\n".$dbObj->headline."\n------------------------------------\n".strip_tags($text);
+		    	$content_textonly[] = array('headline' => $dbObj->headline, "text" => trim(strip_tags($text)));
 
 			    //UPDATE all exported News
 			    $this->Database->prepare("UPDATE `tl_news` SET `ntonl`= 0 WHERE `id`=? ")->execute($dbObj->id);
@@ -78,11 +78,18 @@ class NewsToNewsletter extends Backend
 				$template = $objChannel->n2nl_template;
 			}
 
-		    //Generate the HTML Newsletter Content from the Template
+		    //Generate the HTML newsletter content from the template
 			$template             = new \BackendTemplate($template);
 			$template->wildcard   = "### MailTemplate ###";
 			$template->content	  = $content;
 			$this->NewsletterContent = $template->parse();
+
+			$template_textonly = "n2nl-textonly-mail";
+			//Generate the textonly content from the template
+			$template_textonly             = new \BackendTemplate($template_textonly);
+			$template_textonly->wildcard   = "### MailTemplateTextonly ###";
+			$template_textonly->content	  = $content_textonly;
+			$this->NewsletterText = $template_textonly->parse();
 
 		    //Create new Newsletter with all relevant News
 		    $set = array
