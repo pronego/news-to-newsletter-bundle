@@ -24,6 +24,7 @@ class ModuleSubscribe extends \Contao\ModuleSubscribe
 		$this->Template->lastnameLabel = $GLOBALS['TL_LANG']['MSC']['lastname_label'];
 		$this->Template->firstnameLabel = $GLOBALS['TL_LANG']['MSC']['firstname_label'];
 		$this->Template->genderLabel = $GLOBALS['TL_LANG']['MSC']['gender_label'];
+		$this->Template->privacyLabel = $GLOBALS['TL_LANG']['MSC']['privacy_label'];
 		$this->Template->genderOptions = $GLOBALS['TL_LANG']['MSC']['gender_options'];
 	}
 
@@ -54,6 +55,13 @@ class ModuleSubscribe extends \Contao\ModuleSubscribe
 		$gender = \Input::post('gender');
 
 		if(!\Validator::isAlphabetic($gender)){
+			$this->Template->mclass = 'error';
+			return false;
+		}
+
+		$privacy = \Input::post('privacy');
+
+		if(!$privacy){
 			$this->Template->mclass = 'error';
 			return false;
 		}

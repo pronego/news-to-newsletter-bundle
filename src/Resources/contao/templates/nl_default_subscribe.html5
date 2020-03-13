@@ -42,6 +42,11 @@
         <input type="text" name="email" id="ctrl_email_<?= $this->id ?>" class="text mandatory" value="<?= $this->email ?>" placeholder="<?= $this->emailLabel ?>" required>
       </div>
 
+      <div class="widget widget-checkbox mandatory">
+        <input type="checkbox" name="privacy" id="ctrl_privacy_<?= $this->id ?>" class="checkbox mandatory" required>
+        <label for="ctrl_privacy_<?= $this->id ?>"><?= $this->privacyLabel ?></label>
+      </div>
+
       <?php if ($this->showChannels): ?>
         <div class="widget widget-checkbox">
           <fieldset id="ctrl_channels_<?= $this->id ?>" class="checkbox_container">
