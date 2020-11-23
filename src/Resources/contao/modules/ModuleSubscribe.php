@@ -142,7 +142,7 @@ class ModuleSubscribe extends \Contao\ModuleSubscribe
 		$objEmail->sendTo($strEmail);
 
 		// Redirect to the jumpTo page
-		if ($this->jumpTo && ($objTarget = $this->objModel->getRelated('jumpTo')) instanceof PageModel)
+		if ($this->jumpTo && ($objTarget = $this->objModel->getRelated('jumpTo')) instanceof \Contao\PageModel)
 		{
 			/** @var PageModel $objTarget */
 			$this->redirect($objTarget->getFrontendUrl());
